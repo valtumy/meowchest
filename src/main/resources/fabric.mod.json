@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "meowchest",
+  "version": "${version}",
+  "name": "Meow Chest",
+  "description": "Kisten miauen und drehen sich um 180°, wenn man sie öffnet.",
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.example.meowchest.MeowChest"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

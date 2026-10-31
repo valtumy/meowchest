@@ -13,8 +13,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ChestBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.ChestType;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvent;
 
 public class MeowChest implements ModInitializer {
+		private static final SoundEvent MEOW = SoundEvent.createVariableRangeEvent(Identifier.withDefaultNamespace("entity.cat.ambient"));
 
 	@Override
 	public void onInitialize() {
@@ -30,8 +33,7 @@ public class MeowChest implements ModInitializer {
 			if (ChestBlock.isChestBlockedAt(level, pos)) return InteractionResult.PASS;
 
 			// Miau
-			level.playSound(null, pos, SoundEvents.CAT_AMBIENT, SoundSource.BLOCKS, 1.0F, 1.0F);
-
+						level.playSound(null, pos, MEOW, SoundSource.BLOCKS, 1.0F, 1.0F);
 			// Doppelkiste: zweite Hälfte VOR dem Flip ermitteln
 			BlockPos otherPos = null;
 			if (state.getValue(ChestBlock.TYPE) != ChestType.SINGLE) {
